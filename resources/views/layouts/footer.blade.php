@@ -1,4 +1,4 @@
-<footer class="bg-primary text-white text-center text-lg-start">
+<footer class="text-dark text-center text-lg-start" style="background-color: darkgrey">
     <!-- Grid container -->
     <div class="container p-4">
         <!--Grid row-->
@@ -63,8 +63,8 @@
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        © 2022 Copyright:
+        <a class="text-white" href="http://127.0.0.1:8000/">SSolutions.com</a>
     </div>
     <!-- Copyright -->
 </footer>

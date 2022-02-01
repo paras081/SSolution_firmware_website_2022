@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\contactUsController;
+use App\Http\Controllers\technologyController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,14 @@ Route::get('/dashboard', function () {
 Route::get('/contactUs',[contactUsController::class,'index']);
 
 Route::get('/aboutUs',[contactUsController::class,'create']);
+
+Route::get('/insertTech',[technologyController::class,'insertTech'])->name('insertTech');
+Route::post('/insertTech',[technologyController::class,'storeTech'])->name('storeTech');
+
+
+//view for insert
+//route(named route) for insert operation-->get
+//route(named route) for insert operation-->put
+//define insert method inside controller
+
+
