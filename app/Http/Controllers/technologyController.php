@@ -34,17 +34,25 @@ class technologyController extends Controller
 //       dd($request->techTitle);
         $this->validate($request,[
             'techTitle' =>'required',
-            'techDesc' =>'required'
+            'techDesc' =>'required',
+            'techImg' =>'required | image |max:2048 | mimes:jpeg,png,jpg,svg,ico',
         ]);
+
+        // original file - certi.png
+        // databse rename save - 084508022022.png
+        $imagname = time().'.'.$request->techImg->extension();
+
+        $request->techImg->move(public_path('img/tech_img'),$imagname);
 
         $techTable = new technology();
 
         $techTable->techTitle =$request->techTitle;
         $techTable->techDesc =$request->techDesc;
-        $techTable->techImg ="imagePath";
+        $techTable->techImg =$imagname;
         $techTable->save();
 
-        return view('admin.insertTechnology');
+        
+        return redirect(route('insertTech'))->with('successMsg','Successfully Technology Inserted ');
         //steps
         //1.request data validate
         //1.2 create database object --> model object

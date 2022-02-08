@@ -20,9 +20,16 @@
                 <div class="d-flex align-items-start bg-light mb-3" >
                     <div class="col"></div>
                     <div class="col">
-                        <form action="{{ route('storeTech') }}" method="post">
+                            @if(session('successMsg'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('successMsg') }}
+                                </div>
+                            @endif
+                        <form action="{{ route('storeTech') }}" method="post" enctype="multipart/form-data">
                             @csrf
 {{--                                {{ csrf_token() }}--}}
+
+                            <!-- success alert -->
                             <!-- techTitle input -->
                             <div class="form-outline mb-4">
                                 <input type="text" id="techTitle" name="techTitle" class="form-control" />
@@ -32,7 +39,12 @@
                             <!-- techDesc input -->
                             <div class="form-outline mb-4">
                                 <input type="text" id="techDesc" name="techDesc" class="form-control" />
-                                <label class="form-label" for="techDesc">technology Description</label>
+                                <label class="form-label" for="techDesc">Technology Description</label>
+                            </div>
+
+                             <!-- techImg input -->
+                             <div class="form-outline mb-4">
+                                <input type="file" id="techImg" name="techImg" class="form-control" />
                             </div>
                             <!-- Submit button -->
                             <button type="submit" class="btn btn-primary btn-block">Insert Technology</button>
