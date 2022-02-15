@@ -22,7 +22,7 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard">Dashboard</a>
+                    <a class="nav-link" href="/insertTech">InsertTech</a>
                 </li>
                 <!-- Navbar dropdown -->
                 <li class="nav-item dropdown">
@@ -51,8 +51,8 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/insertTech"
-                    >Admin</a
+                    <a class="nav-link disabled"
+                    >Disabled</a
                     >
                 </li>
             </ul>
