@@ -59,6 +59,8 @@ class technologyController extends Controller
         //2.request data assign in database columns -respectively
         //3.use save method to trigger insert operation in DB
         //4.successfully redirection
+
+        
     }
 
     /**

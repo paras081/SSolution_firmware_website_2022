@@ -31,6 +31,7 @@ Route::get('/insertTech',[technologyController::class,'insertTech'])->name('inse
 Route::post('/insertTech',[technologyController::class,'storeTech'])->name('storeTech');
 
 
+
 //view for insert
 //route(named route) for insert operation-->get
 //route(named route) for insert operation-->put
