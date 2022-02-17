@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Models\technology;
 use Illuminate\Http\Request;
+use App\Models\newsFeed;
 
-class technologyController extends Controller
+class newsFeedController extends Controller
 {
-    public function index()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function insertNewsFeed()
     {
-//        return view('contactUs');
+        return view('admin.insertNewsFeed');
     }
 
     /**
@@ -18,9 +22,9 @@ class technologyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function insertTech()
+    public function create()
     {
-        return view('admin.insertTechnology');
+        //
     }
 
     /**
@@ -29,37 +33,26 @@ class technologyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function storeTech(Request $request)
+    public function storeNewsFeed(Request $request)
     {
-//       dd($request->techTitle);
         $this->validate($request,[
-            'techTitle' =>'required',
-            'techDesc' =>'required',
-            'techImg' =>'required | image |max:2048 | mimes:jpeg,png,jpg,svg,ico',
+            'newsTitle' =>'required',
+            'newsDesc' =>'required',
+            'newsImg' =>'required | image |max:2048 | mimes:jpeg,png,jpg,svg,ico',
         ]);
 
-        // original file - certi.png
-        // databse rename save - 084508022022.png
-        $imagname = time().'.'.$request->techImg->extension();
+        $imagname = time().'.'.$request->newsImg->extension();
 
-        $request->techImg->move(public_path('img/tech_img'),$imagname);
+        $request->newsImg->move(public_path('img/newsFeed_img'),$imagname);
 
-        $techTable = new technology();
+        $newsFeedTable = new newsFeed();
 
-        $techTable->techTitle =$request->techTitle;
-        $techTable->techDesc =$request->techDesc;
-        $techTable->techImg =$imagname;
-        $techTable->save();
-
-        
-        return redirect(route('insertTech'))->with('successMsg','Successfully Technology Inserted ');
-        //steps
-        //1.request data validate
-        //1.2 create database object --> model object
-        //2.request data assign in database columns -respectively
-        //3.use save method to trigger insert operation in DB
-        //4.successfully redirection
-   
+        $newsFeedTable->newsTitle =$request->newsTitle;
+        $newsFeedTable->newsDesc =$request->newsDesc;
+        $newsFeedTable->newsImg =$imagname;
+        $newsFeedTable->save();
+       
+        return redirect(route('insertNewsFeed'))->with('successMsg','Successfully News Feed Inserted ');
     }
 
     /**
