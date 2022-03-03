@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\contactUsController;
 use App\Http\Controllers\technologyController;
+use App\Http\Controllers\newsFeedController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,14 @@ Route::get('/aboutUs',[contactUsController::class,'create']);
 
 Route::get('/insertTech',[technologyController::class,'insertTech'])->name('insertTech');
 Route::post('/insertTech',[technologyController::class,'storeTech'])->name('storeTech');
+
+
+Route::get('/insertNewsFeed',[newsFeedController::class,'insertNewsFeed'])->name('insertNewsFeed');
+Route::post('/insertNewsFeed',[newsFeedController::class,'storeNewsFeed'])->name('storeNewsFeed');
+
+Route::get('/career',function () {
+    return view('career');
+});
 
 
 //view for insert
