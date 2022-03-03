@@ -21,8 +21,8 @@
                     <div class="col"></div>
                     <div class="col">
                             @if(session('successMsg'))
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                {{ session('successMsg') }}
+                                <div class="alert alert-success role="alert">
+                                    {{ session('successMsg') }}
                                 </div>
                             @endif
                         <form action="{{ route('storeTech') }}" method="post" enctype="multipart/form-data">
@@ -37,10 +37,15 @@
                             </div>
 
                             <!-- techDesc input -->
-                            <div class="form-outline mb-4">
-                                <input type="text" id="techDesc" name="techDesc" class="form-control" />
-                                <label class="form-label" for="techDesc">Technology Description</label>
-                            </div>
+                                <div class="form-outline mb-4">
+                                    <textarea class="form-control" id="techDesc" name="techDesc" rows="8"></textarea>
+                                    <label class="form-label" for="techDesc">Technology Description</label>
+                                </div>
+
+{{--                            <div class="form-outline mb-4">--}}
+{{--                                <input type="text" id="techDesc" name="techDesc" class="form-control" />--}}
+{{--                                <label class="form-label" for="techDesc">Technology Description</label>--}}
+{{--                            </div>--}}
 
                              <!-- techImg input -->
                              <div class="form-outline mb-4">
