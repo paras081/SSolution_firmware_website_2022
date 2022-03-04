@@ -24,6 +24,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/insertTech">InsertTech</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/insertNewsFeed">Insert NewsFeed</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/viewNewsFeed">view NewsFeed</a>
+                </li>
                 <!-- Navbar dropdown -->
                 <li class="nav-item dropdown">
                     <a

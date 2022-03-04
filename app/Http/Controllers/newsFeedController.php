@@ -22,9 +22,10 @@ class newsFeedController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function viewNewsFeed()
     {
-        //
+        $newsFeedTableData = newsFeed::all();
+        return view('admin.viewNewsFeed',compact('newsFeedTableData'));
     }
 
     /**
@@ -95,8 +96,9 @@ class newsFeedController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function deleteNewsFeed($id)
     {
-        //
+        newsFeed::find($id)->delete();
+        return view('admin.viewNewsFeed'); 
     }
 }

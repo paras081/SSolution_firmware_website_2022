@@ -10,7 +10,8 @@ class technologyController extends Controller
 {
     public function index()
     {
-//        return view('contactUs');
+        $techTableData = technology::all();
+        return view('home',compact('techTableData'));
     }
 
     /**

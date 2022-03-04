@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [technologyController::class,'index'])->name('viewTechnologyHome');
 
+// Route::get('/', function () {
+//     return view('home');
+// });
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
@@ -34,6 +35,8 @@ Route::post('/insertTech',[technologyController::class,'storeTech'])->name('stor
 
 Route::get('/insertNewsFeed',[newsFeedController::class,'insertNewsFeed'])->name('insertNewsFeed');
 Route::post('/insertNewsFeed',[newsFeedController::class,'storeNewsFeed'])->name('storeNewsFeed');
+Route::get('/viewNewsFeed',[newsFeedController::class,'viewNewsFeed'])->name('viewNewsFeed');
+Route::delete('/deleteNewsFeed',[newsFeedController::class,'deleteNewsFeed'])->name('viewNewsFeed');
 
 Route::get('/career',function () {
     return view('career');
